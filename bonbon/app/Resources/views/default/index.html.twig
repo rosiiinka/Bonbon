@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div style="text-align: center">
+<h1>Magazin Bonbon</h1>
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('user_profile') }}">Profile</a><br>
+        <a href="{{ path('product_index') }}">List products</a><br>
+
+
+
+{% endif %}
+    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_EDITOR') %}
+        <a href="{{ path('product_new') }}">Create product</a><br>
+        <a href="{{ url('admin_manage_products') }}">manage products</a>
+
+    {% endif %}
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+</style>
+{% endblock %}

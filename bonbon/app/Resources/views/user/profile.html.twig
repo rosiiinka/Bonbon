@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div style="text-align: center">
+        <h1>Welcome to your profile {{ user.fullName }}</h1>
+        {{ user.email }}
+        <br>
+        <a href="{{ path('cart_list') }}">View Your Cart</a><br>
+        <a href="{{ path('security_logout') }}">Logout</a>
+    </div>
+{% endblock %}

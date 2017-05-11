@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    {% if is_granted('ROLE_USER') %}
+        <h1 style="text-align: center">You haven't order anything yet</h1>
+        {% for cart_product in cart.cartProducts %}
+            <p>{{ cart_product.product.name }}</p>
+        {% endfor %}
+    {% endif %}
+        {% endblock %}
